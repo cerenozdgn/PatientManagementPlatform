@@ -1,8 +1,0 @@
-0,Ceren ARSLAN,28,0555...,ceren@ex.com
-1,Ceren ARSLAN,28,0555...,ceren@ex.com
-2,Ceren ARSLAN,28,0555...,ceren@ex.com
-3,Ceren ARSLAN,28,0555...,ceren@ex.com
-4,Ceren ARSLAN,28,0555...,ceren@ex.com
-5,Ceren ARSLAN,28,0555...,ceren@ex.com
-6,Ceren ARSLAN,28,0555...,ceren@ex.com
-7,Ceren ARSLAN,28,0555...,ceren@ex.com

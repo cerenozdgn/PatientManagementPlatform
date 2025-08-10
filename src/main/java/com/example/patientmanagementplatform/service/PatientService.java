@@ -18,12 +18,17 @@ public class PatientService {
         return new ArrayList<>(patientMap.values());
     }
     public Optional<Object> getById(int id){
-        return Optional.ofNullable(patientMap.get(id));
-        //ıd yoksa hata fırlatcak kayıt bulunamadı
+        if(!patientMap.containsKey(id)){
+            throw new NoSuchElementException("Kayıt bulunamadı: "+ id);
+        }
+        return Optional.of(patientMap.get(id));
 
     }
 
     public void addPatient(Patient p){
+        if (p.getId() == null || p.getId() == 0) {
+            throw new IllegalArgumentException("Eklemek istediğiniz ID'yi giriniz.");
+        }
         if (patientMap.containsKey(p.getId())){
             throw new IllegalStateException("ID zaten var: "+ p.getId());
             //ID boşsa eklemek istediğiniz ıd giriniz diye hata at
@@ -32,6 +37,9 @@ public class PatientService {
         dao.saveAllPatients(patientMap);
     }
     public void updatePatients(int id, Patient updated){
+        if (id == 0) {
+            throw new IllegalArgumentException("Güncellemek istediğiniz ID'yi giriniz.");
+        }
         if (!patientMap.containsKey(id)){
             throw new NoSuchElementException("Hasta bulunamadı: " + id);
             //ID boşsa eklemek istediğiniz ıd giriniz diye hata at
