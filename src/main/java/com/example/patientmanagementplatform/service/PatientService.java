@@ -31,7 +31,7 @@ public class PatientService {
         }
         if (patientMap.containsKey(p.getId())){
             throw new IllegalStateException("ID zaten var: "+ p.getId());
-            //ID boşsa eklemek istediğiniz ıd giriniz diye hata at
+
         }
         patientMap.put(p.getId(),p);
         dao.saveAllPatients(patientMap);
@@ -42,7 +42,7 @@ public class PatientService {
         }
         if (!patientMap.containsKey(id)){
             throw new NoSuchElementException("Hasta bulunamadı: " + id);
-            //ID boşsa eklemek istediğiniz ıd giriniz diye hata at
+
         }
         updated.setId(id);
         patientMap.put(id,updated);
