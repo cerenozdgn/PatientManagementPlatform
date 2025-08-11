@@ -15,7 +15,6 @@ public class FileUtils {
 
             }
         }
-        // Dosya yoksa oluştur
         if (!file.exists()) {
             try {
                 if (file.createNewFile()) {

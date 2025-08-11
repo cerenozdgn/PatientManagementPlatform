@@ -38,7 +38,7 @@ public class Patient {
 
     public void setEmail(String email) {this.email = email;}
 
-    /** Dosyaya yazarken: CSV üret. */
+
     @Override
     public String toString() {
         return id + "," + name + "," + age + "," + phone + "," + email;
@@ -51,7 +51,7 @@ public class Patient {
             throw new IllegalArgumentException("skip");
         }
 
-        String[] parts = line.split(",", -1); // -1: boş son alanlar da gelsin
+        String[] parts = line.split(",", -1);
         if (parts.length < 5) {
             throw new IllegalArgumentException("CSV formatı hatalı: " + line);
         }
